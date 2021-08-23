@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_sign_in">
+
+        <ImageView
+            android:id="@+id/img_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.155"
+            app:srcCompat="@drawable/image_sign_in" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_username"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="#CCCCCC"
+            android:textColorHint="#CCCCCC"
+            app:boxBackgroundColor="#CCCCCC"
+            app:boxStrokeColor="#CCCCCC"
+            app:hintEnabled="false"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+            app:hintTextColor="#CCCCCC"
+            app:layout_constraintEnd_toEndOf="@+id/img_sign_in"
+            app:layout_constraintStart_toStartOf="@+id/img_sign_in"
+            app:layout_constraintTop_toBottomOf="@+id/img_sign_in"
+            app:suffixTextColor="#CCCCCC">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00CCCCCC"
+                android:hint="@string/username"
+                android:textColor="#CCCCCC"
+                android:textColorHint="#CCCCCC" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_password"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:hintAnimationEnabled="false"
+            android:backgroundTint="#CCCCCC"
+            android:textColorHint="#CCCCCC"
+            app:boxBackgroundColor="#CCCCCC"
+            app:boxStrokeColor="#CCCCCC"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+            app:hintTextColor="#CCCCCC"
+            app:layout_constraintEnd_toEndOf="@+id/til_username"
+            app:layout_constraintStart_toStartOf="@+id/til_username"
+            app:layout_constraintTop_toBottomOf="@+id/til_username"
+            app:layout_constraintVertical_bias="0.092">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00CCCCCC"
+                android:hint="@string/password"
+                android:textColor="#CCCCCC"
+                android:textColorHint="#CCCCCC"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_sign_in"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#CCEEEEEE"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/sign_in"
+            android:textColor="#414D59"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="18dp"
+            app:layout_constraintEnd_toEndOf="@id/til_password"
+            app:layout_constraintStart_toStartOf="@id/til_password"
+            app:layout_constraintTop_toBottomOf="@+id/til_password" />
+
+
+        <TextView
+            android:id="@+id/tv_don_t_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="60dp"
+            android:lines="2"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/don_t_have_an_account"
+            android:textColor="#DDDDDD"
+            app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
+            app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sign_in" />
+
+        <TextView
+            android:id="@+id/tv_sign_up_here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:lines="2"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/sign_up_here"
+            android:textColor="#DDDDDD"
+            app:layout_constraintStart_toEndOf="@+id/tv_don_t_have_account"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sign_in" />
+
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="@string/forgot_password"
+            android:textColor="#DDDDDD"
+            app:layout_constraintEnd_toEndOf="@id/btn_sign_in"
+            app:layout_constraintHorizontal_bias="0.565"
+            app:layout_constraintStart_toStartOf="@id/btn_sign_in"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sign_in" />
+
+        <TextView
+            android:id="@+id/copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copyright_1999_2021_team_10_inc"
+            android:textColor="#414D59"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
+            app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
+            app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

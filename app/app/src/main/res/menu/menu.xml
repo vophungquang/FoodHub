@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:id="@+id/profile"
+        android:icon="@drawable/usericon"
+        android:title="Profile"/>
+    <item android:id="@+id/shirt"
+        android:title="Shirt"
+        android:icon="@drawable/icon_shirt"/>
+    <item android:id="@+id/pant"
+        android:icon="@drawable/icon_pant"
+        android:title="Pant" />
+    <item android:id="@+id/shoes"
+        android:icon="@drawable/icon_shoes"
+        android:title="Shoes" />
+    <item android:id="@+id/accessories"
+        android:icon="@drawable/icon_access"
+        android:title="Accessories" />
+    <item android:icon="@drawable/icon_setting"
+        android:id="@+id/setting"
+        android:title="Setting"/>
+    <item android:title="Log out"
+        android:icon="@drawable/icon_logout"
+        android:id="@+id/logout"/>
+</menu>

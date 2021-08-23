@@ -1,0 +1,21 @@
+version: '2'
+
+services: 
+    app:
+        container_name: genx
+        build: .
+        ports:
+          - "5000:5000"
+        volumes: 
+          - ./:/genx
+        depends_on:
+          - mongo
+        command: python3 app.py
+        restart: on-failure 
+    
+    mongo:
+        container_name: mongogenx
+        image: mongo:4.4.4
+        ports:
+          - "27016:27017"
+        restart: on-failure 

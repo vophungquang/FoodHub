@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sign up - GenX Shopping</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="icon" href="../static/img/core-img/favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="../static/css/style.css">
+
+	</head>
+	<body class="img js-fullheight" style="background-image: url(../static/img/core-img/bgweb.png);">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Sign Up</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">Register your account</h3>
+		      	<form action="#" class="signin-form">
+		      		<div class="form-group">
+		      			<input id="user-field" type="text" class="form-control" placeholder="Username" required>
+		      		</div>
+					<div class="form-group">
+						<input id="email-field" type="text" class="form-control" placeholder="Email" required>
+					</div>
+	            <div class="form-group">
+	              <input id="password-field" type="password" class="form-control" placeholder="Password" required>
+	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+				</form>
+				
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3" id="signup">Sign Up</button>
+					<p class="text-md-center" style="margin-top: 20px"><b id="notification"></b></p>
+	            </div>
+		
+	            <!-- <div class="form-group d-md-flex">
+	            	<div class="w-50">
+		            	<label class="checkbox-wrap checkbox-primary">Remember Me
+									  <input type="checkbox" checked>
+									  <span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="w-50 text-md-right">
+									<a href="#" style="color: #fff">Forgot Password</a>
+								</div>
+	            </div> -->
+	          
+	          <!-- <p class="w-100 text-center">&mdash; <a href="/signup.html" style="color: #fff">Or sign up</a> &mdash;</p> -->
+	          <!-- <div class="social d-flex text-center">
+	          	<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
+	          	<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
+	          </div> -->
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="../static/js/jquery.min.js"></script>
+  <script src="../static/js/popper.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/main.js"></script>
+  <script>
+	var btn_signup = document.getElementById("signup");
+	btn_signup.addEventListener("click", signup);
+
+	function signup(){
+		var password = document.getElementById("password-field").value;
+		var username = document.getElementById("user-field").value;
+		var email = document.getElementById("email-field").value;
+
+		var notification = document.getElementById("notification");
+		console.log(password, username, email, notification);
+
+		var url = 'https://genxshopping.herokuapp.com/signup';
+		var xhr = new XMLHttpRequest();
+
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.onreadystatechange = function() { // Call a function when the state changes.
+			if(this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+				var error = JSON.parse(xhr.responseText);
+				var mess = error['status'];
+				if (mess == 'success'){
+					alert('Sign up successful!')
+					location.href = "/signin";
+					// window.location="index.html";
+				}
+				notification.innerHTML = mess;
+			}
+		}
+		xhr.send(JSON.stringify({
+			"username": username,
+			"password": password,
+			"email": email
+		}));
+	}
+  </script>
+
+	</body>
+</html>
+

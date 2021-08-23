@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8" />
+            <title>Bill - GENXSHOPPING</title>
+    
+            <style>
+                .invoice-box {
+                    max-width: 800px;
+                    margin: auto;
+                    padding: 30px;
+                    border: 1px solid #eee;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-family:  Helvetica, Arial, sans-serif;
+                    color: #555;
+                }
+    
+                .invoice-box table {
+                    width: 100%;
+                    line-height: inherit;
+                    text-align: left;
+                }
+    
+                .invoice-box table td {
+                    padding: 5px;
+                    vertical-align: top;
+                }
+    
+                .invoice-box table tr td:nth-child(2) {
+                    text-align: right;
+                }
+    
+                .invoice-box table tr.top table td {
+                    padding-bottom: 20px;
+                }
+    
+                .invoice-box table tr.top table td.title {
+                    font-size: 45px;
+                    line-height: 45px;
+                    color: #333;
+                }
+    
+                .invoice-box table tr.information table td {
+                    padding-bottom: 40px;
+                }
+    
+                .invoice-box table tr.heading td {
+                    background: #eee;
+                    border-bottom: 1px solid #ddd;
+                    font-weight: bold;
+                }
+    
+                .invoice-box table tr.details td {
+                    padding-bottom: 20px;
+                }
+    
+                .invoice-box table tr.item td {
+                    border-bottom: 1px solid #eee;
+                }
+    
+                .invoice-box table tr.item.last td {
+                    border-bottom: none;
+                }
+    
+                .invoice-box table tr.total td:nth-child(2) {
+                    border-top: 2px solid #eee;
+                    font-weight: bold;
+                }
+                @media only screen and (max-width: 600px) {
+                    .invoice-box {
+                        max-width: 600px;
+                        margin: auto;
+                        padding: 5px;
+                        border: 1px solid #eee;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+                        font-size: 8px;
+                        line-height: 16px;
+                        font-family:  Helvetica, Arial, sans-serif;
+                        color: #555;
+                    }
+        
+                    .invoice-box table {
+                        width: 100%;
+                        line-height: inherit;
+                        text-align: left;
+                    }
+                }
+    
+    
+                /** RTL **/
+                .invoice-box.rtl {
+                    direction: rtl;
+                    font-family: Tahoma,  Helvetica, Arial,sans-serif;
+                }
+    
+                .invoice-box.rtl table {
+                    text-align: left;
+                }
+    
+                .invoice-box.rtl table tr td:nth-child(2) {
+                    text-align: right;
+                }
+            </style>
+				<script src="https://kit.fontawesome.com/9393bb60d3.js"></script>
+        </head>
+    
+        <body>
+            
+            <div class="invoice-box">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="title">
+                            <p>
+                                Hi {{username}},<br>
+                                Hope you enjoy your quality time with our services.<br>
+                                Here is your bill for payment:<br>
+                            </p>
+                        </td>
+                        <td></td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr class="top">
+                        <td colspan="4">
+                            <table>
+                                <tr>
+                                    <td class="title" style="width:40%">
+                                        <a href="https://genxshopping.herokuapp.com"><img src="https://genxshopping.herokuapp.com/static/img/core-img/logo.png" style="width: 50%; max-width: 300px" /></a>
+                                    </td>
+                                    <td></td>
+                                    <td style="text-align: right; width:50%">
+                                        Invoice #: {{bill}}<br />
+                                        Created: {{date.strftime("%B")}} {{date.day}}, {{date.year}}<br />
+                                        Due: {{date.strftime("%B")}} {{date.day}}, {{date.year}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+    
+                    <tr class="information">
+                        <td colspan="4">
+                            <table>
+                                <tr>
+                                    <td>
+                                        Team10, Inc.<br />
+                                        12345 Sunny Road<br />
+                                        Sunnyville, CA 12345
+                                    </td>
+                                    <td></td>
+                                    <td style="text-align: right;padding-right: none; margin-right: none;">
+                                        Customer<br/>
+                                        {{username}}<br/>
+                                        {{email}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+    
+                    <tr class="heading" style="background: #eee;
+                    border-bottom: 1px solid #ddd;
+                    font-weight: bold;">
+                        <td>Product</td>
+                        <td style="text-align: right;">Quantity</td>
+            
+                        <td style="text-align: right;">Price</td>
+                        <td style="text-align: right;">Total</td>
+                    </tr>
+                    {% for item in data %}
+                    <tr class="item" style="border-bottom: 1px solid #eee;">
+                        <td style="width:55%;">{{item["name"]}}</td>
+                        <td style="text-align: right;width:15%;">{{item["count"]}}</td>
+                        <td style="text-align: right;width:15%;">{{item["price"]}}</td>
+                        <td style="text-align: right;width:15%;">{{item["total"]}}</td>
+                    </tr>
+                    {% endfor %} 
+
+                    <tr class="total">
+                        <td colspan="2"></td>
+                        <td colspan="2" style="text-align: right; font-weight:bold;border-top: 1px solid #ddd;padding:2px;">Subtotal: {{origin}}</td>
+                    </tr>
+
+                    <tr class="total">
+                        <td colspan="2"></td>
+                        <td colspan="2" style="text-align: right; font-weight:bold;border-top: 0px solid #ddd;padding:2px;">Discount: {{discount}}</td>
+                    </tr>
+    
+                    <tr class="total">
+                        <td colspan="2"></td>
+                        <td colspan="2" style="text-align: right; font-weight:bold;border-top: 0px solid #ddd;padding:2px;">Total: {{total}}</td>
+                    </tr>
+                </tr>
+                <tr style="border: 1px solid #eee;"></tr>
+                <tr style="border-bottom: 1px solid #000;">
+                    <td colspan="4" style="text-align: center;">  
+                    <p style="text-align: center;margin: 0px;padding: 0px;">Thanks for choosing us!</p>
+                    <p> Visit us at <a href="https://genxshopping.herokuapp.com/">https://genxshopping.herokuapp.com/</a>  	</p>
+                    <p><b style="color: red;">Your coupon code is <b style="background-color:yellow">#GENXSALE20</b> applied for your next shopping!!</b> </p>
+                    </td>
+                </tr>
+                </table>
+				
+            </div>
+			
+            
+            
+        </body>
+    </html>

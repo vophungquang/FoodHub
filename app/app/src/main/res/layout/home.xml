@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:backgroundTint="#F6F4E8"
+    android:id="@+id/drawerLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F4E8"
+    tools:context=".HomeActivity"
+    >
+
+    <ImageView
+        android:id="@+id/img_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="241dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/new_banner" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/username"
+        android:clickable="true"
+        android:textSize="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#93907E"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/img_icon_user"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_icon_user"
+        android:layout_width="30dp"
+        android:layout_height="34dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/usericon" />
+
+    <ImageView
+        android:id="@+id/img_shirt"
+        android:layout_width="170dp"
+        android:layout_height="180dp"
+        android:clickable="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_banner"
+        app:srcCompat="@drawable/shirt_symbol" />
+
+    <TextView
+        android:id="@+id/tv_shirt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Shirt"
+        android:textColor="#414D59"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/img_shirt"
+        app:layout_constraintStart_toStartOf="@+id/img_shirt"
+        app:layout_constraintTop_toBottomOf="@+id/img_shirt" />
+
+    <ImageView
+        android:id="@+id/img_pant"
+        android:layout_width="170dp"
+        android:layout_height="180dp"
+        android:clickable="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_banner"
+        app:srcCompat="@drawable/pant_symbol" />
+
+    <TextView
+        android:id="@+id/tv_pant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Pant"
+        android:textColor="#414D59"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/img_pant"
+        app:layout_constraintStart_toStartOf="@+id/img_pant"
+        app:layout_constraintTop_toBottomOf="@+id/img_pant" />
+
+    <ImageView
+        android:id="@+id/img_shoes"
+        android:layout_width="170dp"
+        android:layout_height="180dp"
+        android:clickable="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shirt"
+        app:srcCompat="@drawable/shoes_symbol" />
+
+    <TextView
+        android:id="@+id/tv_shoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Shoes"
+        android:textColor="#414D59"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/img_shoes"
+        app:layout_constraintStart_toStartOf="@+id/img_shoes"
+        app:layout_constraintTop_toBottomOf="@+id/img_shoes" />
+
+    <ImageView
+        android:id="@+id/img_watch"
+        android:layout_width="170dp"
+        android:layout_height="180dp"
+        android:clickable="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pant"
+        app:srcCompat="@drawable/access_symbol" />
+
+    <TextView
+        android:id="@+id/tv_accessories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Accessories"
+        android:textColor="#414D59"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/img_watch"
+        app:layout_constraintStart_toStartOf="@+id/img_watch"
+        app:layout_constraintTop_toBottomOf="@+id/img_watch" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/img_menu"-->
+<!--        android:layout_width="63dp"-->
+<!--        android:layout_height="53dp"-->
+<!--        android:clickable="true"-->
+<!--        app:srcCompat="@drawable/iconmenu"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:layout_editor_absoluteX="200dp"-->
+<!--        tools:layout_editor_absoluteY="46dp" />-->
+
+    <ImageView
+        android:id="@+id/img_cart"
+        android:layout_width="56dp"
+        android:layout_height="43dp"
+        android:clickable="true"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cart_home" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/menu"
+        app:headerLayout="@layout/nav_header"
+        android:backgroundTint="#304050"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>
