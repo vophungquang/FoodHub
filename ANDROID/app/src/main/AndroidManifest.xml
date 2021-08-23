@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.team10">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="TEAM 10"
+        android:roundIcon="@mipmap/ic_app_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AndroidChallengeW3">
+        <activity android:name=".activity.splash.SplashActivity" android:theme="@style/SplashTheme" android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.boarding.BoardingOneActivity" android:noHistory="true" />
+        <activity android:name=".activity.boarding.BoardingTwoActivity" android:noHistory="true"/>
+        <activity android:name=".activity.boarding.BoardingThreeActivity" android:noHistory="true"/>
+        <activity android:name=".activity.welcome.WelcomeActivity" android:noHistory="true" />
+
+        <activity android:name=".activity.signup.SignUpActivity" android:noHistory="true" />
+        <activity android:name=".activity.signin.SignInActivity"/>
+        <activity android:name=".activity.profile.ProfileActivity"/>
+        <activity android:name=".restaurant.RestaurantActivity" android:configChanges="orientation|screenSize"/>
+
+    </application>
+</manifest>
