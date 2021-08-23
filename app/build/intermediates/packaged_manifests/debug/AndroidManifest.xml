@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.w2_challenge"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="24"
+        android:targetSdkVersion="30" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.W2_challenge" >
+        <activity android:name="com.example.w2_challenge.ProfileActivity" />
+        <activity android:name="com.example.w2_challenge.Login" />
+        <activity android:name="com.example.w2_challenge.Loginactivity" />
+        <activity android:name="com.example.w2_challenge.Detail" />
+        <activity android:name="com.example.w2_challenge.OnBoard3" />
+        <activity android:name="com.example.w2_challenge.OnBoard2" />
+        <activity android:name="com.example.w2_challenge.OnBoard1" />
+        <activity android:name="com.example.w2_challenge.WelcomeActivity" />
+        <activity android:name="com.example.w2_challenge.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

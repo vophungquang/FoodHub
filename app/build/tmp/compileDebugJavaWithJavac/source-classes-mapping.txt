@@ -1,0 +1,2 @@
+com/example/w2_challenge/BuildConfig.java
+ com.example.w2_challenge.BuildConfig

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">w2_challenge</string>
+    <string name="splash1">TODO</string>
+    <string name="full_name">Full name</string>
+    <string name="hint">hint</string>
+    <string name="name">Eljad Eendaz</string>
+    <string name="e_mail">E-mail</string>
+    <string name="email">prelookstudio@gmail.com</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="number">+1 (783) 0986 8786</string>
+    <string name="splash">TODO</string>
+    <string name="eljad_eendaz">Eljad Eendaz</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="background1">TODO</string>
+    <string name="have_an_account">Already have an account?</string>
+    <string name="sign_in_with">sign in with</string>
+    <string name="your_favourite_foods_delivered_fast_at_your_door">Your favourite foods delivered fast at your door.</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="fbgg">TODO</string>
+    <string name="food_hub">Food Hub</string>
+    <string name="todo1">TODO</string>
+    <string name="signinwith1">TODO</string>
+    <string name="signinwith">TODO</string>
+    <string name="start_with_email_or_phone">Start with email or phone</string>
+</resources>
